@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Izabely\\source\\repos\\PedidoProduto\\PedidoProduto\\Pedido_Produto.csproj": {}
+    "C:\\Users\\Izabely\\source\\repos\\Pedidos-e-Produtos\\PedidoProduto\\PedidoProduto\\Pedido_Produto.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Izabely\\source\\repos\\PedidoProduto\\PedidoProduto\\Pedido_Produto.csproj": {
+    "C:\\Users\\Izabely\\source\\repos\\Pedidos-e-Produtos\\PedidoProduto\\PedidoProduto\\Pedido_Produto.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Izabely\\source\\repos\\PedidoProduto\\PedidoProduto\\Pedido_Produto.csproj",
+        "projectUniqueName": "C:\\Users\\Izabely\\source\\repos\\Pedidos-e-Produtos\\PedidoProduto\\PedidoProduto\\Pedido_Produto.csproj",
         "projectName": "Pedido_Produto",
-        "projectPath": "C:\\Users\\Izabely\\source\\repos\\PedidoProduto\\PedidoProduto\\Pedido_Produto.csproj",
+        "projectPath": "C:\\Users\\Izabely\\source\\repos\\Pedidos-e-Produtos\\PedidoProduto\\PedidoProduto\\Pedido_Produto.csproj",
         "packagesPath": "C:\\Users\\Izabely\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Izabely\\source\\repos\\PedidoProduto\\PedidoProduto\\obj\\",
+        "outputPath": "C:\\Users\\Izabely\\source\\repos\\Pedidos-e-Produtos\\PedidoProduto\\PedidoProduto\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Izabely\\AppData\\Roaming\\NuGet\\NuGet.Config",

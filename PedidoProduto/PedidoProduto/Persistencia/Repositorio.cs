@@ -1,17 +1,20 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using PedidoProduto.Entities;
+using System.Data;
 using System.Linq;
 
 namespace PedidoProduto.Persistencia
 {
     public class Repositorio : DbContext
     {
-
-        public static string ConnectionString { get; set; }
-
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(ConnectionString);
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder.UseSqlServer(@"Data Source=VMI368814;Initial Catalog=PedidoProduto;Integrated Security=True");
+            }
+            
         }
 
         public DbSet<Cliente> Clientes { get; set; }
@@ -23,10 +26,6 @@ namespace PedidoProduto.Persistencia
        
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.HasDefaultSchema("public");
-            //modelBuilder.Model.GetEntityTypes().SelectMany(e => e.GetProperties()).ToList()
-              //  .ForEach(c => c.Relational().ColumnName = ToSnakeCase(c.Name));
-
             modelBuilder.Entity<Cliente>().ToTable("CLIENTE");
             modelBuilder.Entity<Produto>().ToTable("PRODUTO");
             modelBuilder.Entity<Pedido>().ToTable("PEDIDOS");

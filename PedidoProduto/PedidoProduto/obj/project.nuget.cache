@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FdCHksOvRHS9JApEUPxKzDFrj5venqlvT7BV814YbkkvPf6MvmingpJVJ7UgjaqFKe8108o4PnsyItkYtA6XPw==",
+  "dgSpecHash": "IqS0cSJPmchRJAhqz1PhfS3xzBFHqNVpX3qwAgrO4fEwllGy2HozCb+/HL3atBjf8WAJLE1vEYjy/TKiMDugjQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Izabely\\source\\repos\\PedidoProduto\\PedidoProduto\\Pedido_Produto.csproj",
+  "projectFilePath": "C:\\Users\\Izabely\\source\\repos\\Pedidos-e-Produtos\\PedidoProduto\\PedidoProduto\\Pedido_Produto.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Izabely\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Izabely\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",

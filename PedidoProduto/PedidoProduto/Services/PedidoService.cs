@@ -18,7 +18,7 @@ namespace PedidoProduto.Services
             using (Repositorio ctx = new Repositorio())
             {
                 return ctx.Pedidos.Include(a => a.produtos)
-                                  .Where(a => a.id == uuid)
+                                  .Where(a => a.ID == uuid)
                                   .FirstOrDefault();
             }
         }
@@ -37,7 +37,7 @@ namespace PedidoProduto.Services
             {
                 pedido_.Validar();
                 Pedido _pessoa = ctx.Pedidos.Include(a => a.produtos)
-                                  .Where(x => x.id.Equals(pedido_.id)).FirstOrDefault();
+                                  .Where(x => x.ID.Equals(pedido_.ID)).FirstOrDefault();
 
                 ctx.Pedidos.Add(pedido_);
                 ctx.SaveChanges();
@@ -51,7 +51,7 @@ namespace PedidoProduto.Services
             {
                 Pedido _pedido = ctx.Pedidos
                     .Include(a => a.produtos)
-                    .Where(x => x.id == uuid).FirstOrDefault();
+                    .Where(x => x.ID == uuid).FirstOrDefault();
                 _pedido.Validar();
 
                 _pedido.dataPedido = pedido_.dataPedido;
@@ -69,7 +69,7 @@ namespace PedidoProduto.Services
             using (Repositorio ctx = new Repositorio())
             {
                 Pedido _pedido = ctx.Pedidos
-                    .Where(s => s.id == uuid).FirstOrDefault();
+                    .Where(s => s.ID == uuid).FirstOrDefault();
 
                 if (_pedido == null)
                     return true;

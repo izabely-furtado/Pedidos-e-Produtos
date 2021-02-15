@@ -18,7 +18,7 @@ namespace PedidoProduto.Services
             using (Repositorio ctx = new Repositorio())
             {
                 return ctx.Clientes.Include(a => a.pedidos)
-                    .Where(a => a.id.Equals(id)).FirstOrDefault();
+                    .Where(a => a.ID.Equals(id)).FirstOrDefault();
             }
         }
 
@@ -26,10 +26,10 @@ namespace PedidoProduto.Services
         {
             using (Repositorio ctx = new Repositorio())
             {
-                Cliente _cliente = ctx.Clientes.Where(a => a.id == cliente_uuid).FirstOrDefault();
+                Cliente _cliente = ctx.Clientes.Where(a => a.ID == cliente_uuid).FirstOrDefault();
                 return ctx.Clientes
                     .Include(a => a.pedidos)
-                    .Where(a => a.id == uuid).FirstOrDefault();
+                    .Where(a => a.ID == uuid).FirstOrDefault();
             }
         }
 
@@ -45,21 +45,30 @@ namespace PedidoProduto.Services
         {
             using (Repositorio ctx = new Repositorio())
             {
-                //cliente_.Validar();
-                Cliente _cliente = ctx.Clientes.Where(x => x.id.Equals(cliente_.id)).FirstOrDefault();
-
-                if (_cliente != null && _cliente.id != 0)
+                cliente_.Validar();
+                if (cliente_.ID != 0)
                 {
-                    return ClienteService.Editar(_cliente.id, cliente_);
+                    Cliente _cliente = ctx.Clientes.Where(x => x.ID.Equals(cliente_.ID)).FirstOrDefault();
+
+                    if (_cliente != null && _cliente.ID != 0)
+                    {
+                        return ClienteService.Editar(_cliente.ID, cliente_);
+                    }
+                    //se possuir id !=0 e nao existente no banco.. nao seria novo nem editável
+                    else
+                    {
+                        throw new ApplicationBadRequestException(ApplicationBadRequestException.ERRO_AO_CADASTRAR_CLIENTE);
+                    }
                 }
-                //throw new ApplicationBadRequestException(ApplicationBadRequestException.ERRO_AO_CADASTRAR_PESSOA);
-
-                Cliente cliente = new Cliente();
-                cliente.pedidos = cliente_.pedidos;
-
-                ctx.Clientes.Add(cliente);
-                ctx.SaveChanges();
-                return cliente;
+                else
+                {
+                    Cliente cliente = new Cliente();
+                    cliente.pedidos = cliente_.pedidos;
+                    cliente.NOME = cliente_.NOME;
+                    ctx.Clientes.Add(cliente);
+                    ctx.SaveChanges();
+                    return cliente;
+                }
             }
         }
 
@@ -69,13 +78,13 @@ namespace PedidoProduto.Services
             {
                 Cliente _cliente = ctx.Clientes
                     .Include(a => a.pedidos)
-                    .Where(x => x.id == uuid).FirstOrDefault();
+                    .Where(x => x.ID == uuid).FirstOrDefault();
                 _cliente.Validar();
 
-                _cliente.nome = cliente.nome.ToUpper();
+                _cliente.NOME = cliente.NOME.ToUpper();
                 _cliente.pedidos = cliente.pedidos;
                 ctx.Clientes.Update(_cliente);
-                
+
 
                 ctx.SaveChanges();
                 return _cliente;
@@ -95,7 +104,7 @@ namespace PedidoProduto.Services
                 List<Cliente> clientes = new List<Cliente>();
                 _pagina.quantidade_total = ctx.Clientes.Count();
                 clientes = ctx.Clientes.Include(a => a.pedidos)
-                    .OrderBy(x => x.nome).Skip(inicio).Take(_pagina.quantidade_pagina).ToList();
+                    .OrderBy(x => x.NOME).Skip(inicio).Take(_pagina.quantidade_pagina).ToList();
 
                 _pagina.total_paginas = Convert.ToInt32(Math.Ceiling((double)_pagina.quantidade_total / _pagina.quantidade_pagina));
                 _pagina.conteudo = clientes;
@@ -112,7 +121,7 @@ namespace PedidoProduto.Services
             using (Repositorio ctx = new Repositorio())
             {
                 Cliente _cliente = ctx.Clientes.Include(a => a.pedidos)
-                    .Where(a => a.id.Equals(cliente_uuid)).FirstOrDefault();
+                    .Where(a => a.ID.Equals(cliente_uuid)).FirstOrDefault();
 
                 if (_cliente == null)
                 {

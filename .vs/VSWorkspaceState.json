@@ -1,12 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\PedidoProduto",
-    "\\PedidoProduto\\bin",
-    "\\PedidoProduto\\Entities",
-    "\\PedidoProduto\\Persistencia",
-    "\\PedidoProduto\\Services"
+    "\\PedidoProduto\\PedidoProduto"
   ],
-  "SelectedNode": "\\PedidoProduto\\bin",
+  "SelectedNode": "\\PedidoProduto",
   "PreviewInSolutionExplorer": false
 }

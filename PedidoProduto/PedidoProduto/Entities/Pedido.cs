@@ -25,7 +25,7 @@ namespace PedidoProduto.Entities
                 List<Produto> lista = new List<Produto>();
                 foreach (var item in this.produtos)
                 {
-                    Produto produto = lista.Where(x => x.id == item.id).FirstOrDefault();
+                    Produto produto = lista.Where(x => x.ID == item.ID).FirstOrDefault();
                     if (produto == null)
                     {
                         lista.Add(item);

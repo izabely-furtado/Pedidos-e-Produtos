@@ -5,7 +5,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using PedidoProduto.Entities;
 using PedidoProduto.Models;
+using PedidoProduto.Services;
 
 namespace PedidoProduto.Controllers
 {
@@ -27,6 +29,11 @@ namespace PedidoProduto.Controllers
             ViewData["ClassMenuProdutos"] = "";
             ViewData["ClassMenuPedidos"] = "";
             ViewData["ClassMenuRelatorio"] = "";
+            Cliente cli = new Cliente();
+            cli.NOME = "testando2";
+            Cliente retorno = ClienteService.Salvar(cli);
+            ViewData["List"] = ClienteService.Listar()[0].NOME + retorno.NOME;
+
             return View();
         }
 
