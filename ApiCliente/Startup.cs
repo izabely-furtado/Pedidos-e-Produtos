@@ -45,7 +45,7 @@ namespace ApiCliente
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new Info { Title = "Cadastro de Pessoal", Version = "v1" });
+                c.SwaggerDoc("v1", new Info { Title = "PedidoProduto", Version = "v1" });
              //   c.OperationFilter<AddRequiredHeaderParameter>();
                 c.DescribeAllEnumsAsStrings();
             });
@@ -92,7 +92,7 @@ namespace ApiCliente
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Cadastro de Pessoal - Cliente");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Pedidos e Produtos - Cliente");
             });
 
         }

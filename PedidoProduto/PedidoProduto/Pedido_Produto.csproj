@@ -1,0 +1,112 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\assets\css\bootstrap.min.css" />
+    <None Include="wwwroot\assets\css\flaticon.css" />
+    <None Include="wwwroot\assets\css\font-awesome.min.css" />
+    <None Include="wwwroot\assets\css\impressao.css" />
+    <None Include="wwwroot\assets\css\main.css" />
+    <None Include="wwwroot\assets\css\owl.carousel.css" />
+    <None Include="wwwroot\assets\css\owl.theme.css" />
+    <None Include="wwwroot\assets\css\owl.transitions.css" />
+    <None Include="wwwroot\assets\css\sweetalert2.css" />
+    <None Include="wwwroot\assets\fonts\Flaticon.eot" />
+    <None Include="wwwroot\assets\fonts\Flaticon.svg" />
+    <None Include="wwwroot\assets\fonts\Flaticon.ttf" />
+    <None Include="wwwroot\assets\fonts\Flaticon.woff" />
+    <None Include="wwwroot\assets\fonts\fontawesome-webfont.eot" />
+    <None Include="wwwroot\assets\fonts\fontawesome-webfont.svg" />
+    <None Include="wwwroot\assets\fonts\fontawesome-webfont.ttf" />
+    <None Include="wwwroot\assets\fonts\fontawesome-webfont.woff" />
+    <None Include="wwwroot\assets\fonts\fontawesome-webfont.woff2" />
+    <None Include="wwwroot\assets\fonts\FontAwesome.otf" />
+    <None Include="wwwroot\assets\fonts\glyphicons-halflings-regular.eot" />
+    <None Include="wwwroot\assets\fonts\glyphicons-halflings-regular.svg" />
+    <None Include="wwwroot\assets\fonts\glyphicons-halflings-regular.ttf" />
+    <None Include="wwwroot\assets\fonts\glyphicons-halflings-regular.woff" />
+    <None Include="wwwroot\assets\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="wwwroot\assets\fonts\_flaticon.scss" />
+    <None Include="wwwroot\assets\img\bg-bottom-destaque.png" />
+    <None Include="wwwroot\assets\img\bg-content-inner.png" />
+    <None Include="wwwroot\assets\img\c-down-right.png" />
+    <None Include="wwwroot\assets\img\c-top-left-opaque.png" />
+    <None Include="wwwroot\assets\img\c-top-left.png" />
+    <None Include="wwwroot\assets\img\c-top-right-opaque.png" />
+    <None Include="wwwroot\assets\img\curva-interna.png" />
+    <None Include="wwwroot\assets\img\favicon\android-icon-144x144.png" />
+    <None Include="wwwroot\assets\img\favicon\android-icon-192x192.png" />
+    <None Include="wwwroot\assets\img\favicon\android-icon-36x36.png" />
+    <None Include="wwwroot\assets\img\favicon\android-icon-48x48.png" />
+    <None Include="wwwroot\assets\img\favicon\android-icon-72x72.png" />
+    <None Include="wwwroot\assets\img\favicon\android-icon-96x96.png" />
+    <None Include="wwwroot\assets\img\favicon\browserconfig.xml" />
+    <None Include="wwwroot\assets\img\favicon\favicon-16x16.png" />
+    <None Include="wwwroot\assets\img\favicon\favicon-32x32.png" />
+    <None Include="wwwroot\assets\img\favicon\favicon-96x96.png" />
+    <None Include="wwwroot\assets\img\favicon\ms-icon-144x144.png" />
+    <None Include="wwwroot\assets\img\favicon\ms-icon-150x150.png" />
+    <None Include="wwwroot\assets\img\favicon\ms-icon-310x310.png" />
+    <None Include="wwwroot\assets\img\favicon\ms-icon-70x70.png" />
+    <None Include="wwwroot\assets\img\favicon\Thumbs.db" />
+    <None Include="wwwroot\assets\img\icon-mais.png" />
+    <None Include="wwwroot\assets\img\Thumbs.db" />
+    <None Include="wwwroot\assets\js\bootstrap.min.js" />
+    <None Include="wwwroot\assets\js\jquery.mask.min.js" />
+    <None Include="wwwroot\assets\js\jquery.maskedinput.js" />
+    <None Include="wwwroot\assets\js\jquery.min.js" />
+    <None Include="wwwroot\assets\js\main.js" />
+    <None Include="wwwroot\assets\js\mask.js" />
+    <None Include="wwwroot\assets\js\owl.carousel.min.js" />
+    <None Include="wwwroot\assets\js\sweetalert2.min.js" />
+    <None Include="wwwroot\assets\lightgallery\css\lg-fb-comment-box.css" />
+    <None Include="wwwroot\assets\lightgallery\css\lg-fb-comment-box.min.css" />
+    <None Include="wwwroot\assets\lightgallery\css\lg-transitions.min.css" />
+    <None Include="wwwroot\assets\lightgallery\css\lightgallery.min.css" />
+    <None Include="wwwroot\assets\lightgallery\fonts\lg.eot" />
+    <None Include="wwwroot\assets\lightgallery\fonts\lg.svg" />
+    <None Include="wwwroot\assets\lightgallery\fonts\lg.ttf" />
+    <None Include="wwwroot\assets\lightgallery\fonts\lg.woff" />
+    <None Include="wwwroot\assets\lightgallery\img\loading.gif" />
+    <None Include="wwwroot\assets\lightgallery\img\video-play.png" />
+    <None Include="wwwroot\assets\lightgallery\img\vimeo-play.png" />
+    <None Include="wwwroot\assets\lightgallery\img\youtube-play.png" />
+    <None Include="wwwroot\assets\lightgallery\js\jquery.mousewheel.min.js" />
+    <None Include="wwwroot\assets\lightgallery\js\lg-autoplay.js" />
+    <None Include="wwwroot\assets\lightgallery\js\lg-autoplay.min.js" />
+    <None Include="wwwroot\assets\lightgallery\js\lg-fullscreen.js" />
+    <None Include="wwwroot\assets\lightgallery\js\lg-fullscreen.min.js" />
+    <None Include="wwwroot\assets\lightgallery\js\lg-hash.js" />
+    <None Include="wwwroot\assets\lightgallery\js\lg-hash.min.js" />
+    <None Include="wwwroot\assets\lightgallery\js\lg-pager.js" />
+    <None Include="wwwroot\assets\lightgallery\js\lg-pager.min.js" />
+    <None Include="wwwroot\assets\lightgallery\js\lg-thumbnail.js" />
+    <None Include="wwwroot\assets\lightgallery\js\lg-thumbnail.min.js" />
+    <None Include="wwwroot\assets\lightgallery\js\lg-video.js" />
+    <None Include="wwwroot\assets\lightgallery\js\lg-video.min.js" />
+    <None Include="wwwroot\assets\lightgallery\js\lg-zoom.js" />
+    <None Include="wwwroot\assets\lightgallery\js\lg-zoom.min.js" />
+    <None Include="wwwroot\assets\lightgallery\js\lightgallery-all.js" />
+    <None Include="wwwroot\assets\lightgallery\js\lightgallery-all.min.js" />
+    <None Include="wwwroot\assets\lightgallery\js\lightgallery.js" />
+    <None Include="wwwroot\assets\lightgallery\js\lightgallery.min.js" />
+    <None Include="wwwroot\assets\okaynav\css\common.min.css" />
+    <None Include="wwwroot\assets\okaynav\css\okayNav.min.css" />
+    <None Include="wwwroot\assets\okaynav\js\jquery.okayNav-min.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.3" />
+    <PackageReference Include="microsoft.entityframeworkcore.sqlserver" Version="5.0.3" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Entities\" />
+    <Folder Include="wwwroot\assets\guia-estilo\" />
+  </ItemGroup>
+
+</Project>

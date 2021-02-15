@@ -1,0 +1,89 @@
+﻿<div class="row">
+    <div class="col-md-3">
+        <div class="form-group">
+            <label>Produto:</label>
+            <input type="text" class="form-control" id="" placeholder="Produto" />
+            <small>Mensagem de erro.</small>
+        </div>
+    </div>
+    <div class="col-md-3">
+
+        <div class="form-group">
+            <label>Intervalo:</label>
+            <input type="text" class="form-control" id="" placeholder="Início" />
+            <small>Mensagem de erro.</small>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="form-group">
+            <label>até</label>
+            <input type="text" class="form-control" id="" placeholder="Fim" />
+            <small>Mensagem de erro.</small>
+        </div>
+
+
+    </div>
+    <div class="col-md-3">
+        <button type="submit"
+                class="btn btn-default btn-theme-orange btn-block btn-inline">
+            Pesquisar
+        </button>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+
+        <div id="calendar_basic" style="width: 1000px; height: 350px;"></div>
+
+
+    </div>
+</div>
+
+
+
+
+
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+    google.charts.load("current", { packages: ["calendar"] });
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+      var dataTable = new google.visualization.DataTable();
+      dataTable.addColumn({ type: 'date', id: 'Date' });
+      dataTable.addColumn({ type: 'number', id: 'Won/Loss' });
+      dataTable.addRows([
+        [new Date(2013, 9, 4), 10],
+        [new Date(2013, 9, 5), 3],
+        [new Date(2013, 9, 7), -1],
+        [new Date(2013, 9, 8), 2],
+        [new Date(2013, 9, 12), -1],
+        [new Date(2013, 9, 13), 1],
+        [new Date(2013, 9, 15), 1],
+        [new Date(2013, 9, 16), -4],
+      ]);
+
+      var chart = new google.visualization.Calendar(document.getElementById('calendar_basic'));
+
+      var options = {
+        title: "Venda de produto no período",
+        height: 350,
+        calendar: {
+          cellColor: {
+            stroke: '#578C07',
+            strokeOpacity: 1,
+            strokeWidth: 1,
+          },
+          yearLabel: {
+            color: '#F29727',
+          }
+        },
+
+
+      };
+
+      chart.draw(dataTable, options);
+    }
+</script>

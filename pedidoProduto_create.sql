@@ -1,21 +1,21 @@
-/* banco comeÃ§a aqui */
+/* banco começa aqui */
 create table CLIENTE
     (
-      ID int AUTO_INCREMENT, 
-      NOME char(200) NOT NULL,
+      ID INT NOT NULL IDENTITY, 
+      NOME varchar(200) NOT NULL,
       primary key (ID)
     );
 
 create table PRODUTO
     (
-      ID int AUTO_INCREMENT, 
-      NOME char(200)NOT NULL,
+      ID INT NOT NULL IDENTITY, 
+      NOME varchar(200)NOT NULL,
       primary key (ID)
     );
 
 create table PEDIDO 
     (
-      ID int AUTO_INCREMENT, 
+      ID INT NOT NULL IDENTITY, 
       DATAPEDIDO datetime NOT NULL,
       TOTAL real NOT NULL,
       primary key (ID)
@@ -23,7 +23,7 @@ create table PEDIDO
  
 create table PEDIDOPRODUTO
     (
-      ID int AUTO_INCREMENT, 
+      ID INT NOT NULL IDENTITY,  
       PEDIDO int NOT NULL,
       PRODUTO int NOT NULL,
       primary key (ID)
@@ -31,7 +31,7 @@ create table PEDIDOPRODUTO
 
 create table CLIENTEPEDIDO
     (
-      ID int AUTO_INCREMENT, 
+      ID INT NOT NULL IDENTITY, 
       PEDIDO int NOT NULL,
       CLIENTE int NOT NULL,
       primary key (ID)
