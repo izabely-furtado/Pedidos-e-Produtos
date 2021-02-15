@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using PedidoProduto.Util;
 
 namespace PedidoProduto.Entities
@@ -9,9 +11,10 @@ namespace PedidoProduto.Entities
 
         public void Validar()
         {
-            if (string.IsNullOrEmpty(this.nome))
+            if (String.IsNullOrEmpty(this.nome))
                 throw new ApplicationBadRequestException(ApplicationBadRequestException.NOME_INVALIDO);
 
+            
         }
     }
     

@@ -17,11 +17,12 @@ namespace PedidoProduto.Services
         {
             using (Repositorio ctx = new Repositorio())
             {
-                return ctx.Pedidos.Include(a => a.produtos)
-                                  .Where(a => a.ID == uuid)
+                return ctx.Pedidos.Where(a => a.ID == uuid)
                                   .FirstOrDefault();
             }
         }
+
+        
 
         public static List<Pedido> Listar()
         {
@@ -36,8 +37,7 @@ namespace PedidoProduto.Services
             using (Repositorio ctx = new Repositorio())
             {
                 pedido_.Validar();
-                Pedido _pessoa = ctx.Pedidos.Include(a => a.produtos)
-                                  .Where(x => x.ID.Equals(pedido_.ID)).FirstOrDefault();
+                Pedido _pessoa = ctx.Pedidos.Where(x => x.ID.Equals(pedido_.ID)).FirstOrDefault();
 
                 ctx.Pedidos.Add(pedido_);
                 ctx.SaveChanges();
@@ -49,14 +49,11 @@ namespace PedidoProduto.Services
         {
             using (Repositorio ctx = new Repositorio())
             {
-                Pedido _pedido = ctx.Pedidos
-                    .Include(a => a.produtos)
-                    .Where(x => x.ID == uuid).FirstOrDefault();
+                Pedido _pedido = ctx.Pedidos.Where(x => x.ID == uuid).FirstOrDefault();
                 _pedido.Validar();
 
                 _pedido.dataPedido = pedido_.dataPedido;
                 _pedido.total = pedido_.total;
-                _pedido.produtos = pedido_.produtos;
                 ctx.Pedidos.Update(_pedido);
 
                 ctx.SaveChanges();

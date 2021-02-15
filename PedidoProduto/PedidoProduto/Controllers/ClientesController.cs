@@ -14,6 +14,7 @@ namespace PedidoProduto.Controllers
     public class ClientesController : Controller
     {
         private readonly ILogger<ClientesController> _logger;
+        public List<Cliente> clientes { get; set; }
         
         public ClientesController(ILogger<ClientesController> logger)
         {
@@ -29,11 +30,7 @@ namespace PedidoProduto.Controllers
             ViewData["ClassMenuProdutos"] = "";
             ViewData["ClassMenuPedidos"] = "";
             ViewData["ClassMenuRelatorio"] = "";
-            Cliente cli = new Cliente();
-            cli.NOME = "testando2";
-            Cliente retorno = ClienteService.Salvar(cli);
-            ViewData["List"] = ClienteService.Listar()[0].NOME + retorno.NOME;
-
+            this.ViewBag.clientes = ClienteService.Listar();
             return View();
         }
 

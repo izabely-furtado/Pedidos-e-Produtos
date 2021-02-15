@@ -8,15 +8,13 @@ namespace PedidoProduto.Entities
 {
     public class Cliente : Entity
     {
-        public string NOME { get; set; }
-
-        public virtual List<Pedido> pedidos { get; set; }
+        public string nome { get; set; }
 
         public void Validar()
         {
-            if (String.IsNullOrEmpty(this.NOME))
+            if (String.IsNullOrEmpty(this.nome))
                 throw new ApplicationBadRequestException(ApplicationBadRequestException.NOME_INVALIDO);
-
+            /*
             if (this.pedidos != null && this.pedidos.Count > 0)
             {
                 List<Pedido> lista = new List<Pedido>();
@@ -30,6 +28,7 @@ namespace PedidoProduto.Entities
                 }
                 this.pedidos = lista;
             }
+            */
         }
     
     }

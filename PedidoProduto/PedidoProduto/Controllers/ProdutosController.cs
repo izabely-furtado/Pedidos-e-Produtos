@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using PedidoProduto.Models;
+using PedidoProduto.Services;
 
 namespace PedidoProduto.Controllers
 {
@@ -27,6 +28,7 @@ namespace PedidoProduto.Controllers
             ViewData["ClassMenuProdutos"] = "menu-dsk";
             ViewData["ClassMenuPedidos"] = "";
             ViewData["ClassMenuRelatorio"] = "";
+            this.ViewBag.produtos = ProdutoService.Listar();
             return View();
         }
 

@@ -27,21 +27,14 @@
                         <th>Nome</th>
                         <th>Ações</th>
                     </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Izabely Almeida Furtado Corrêa</td>
-                        <td>1</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Izabely Almeida Furtado Corrêa</td>
-                        <td>1</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Izabely Almeida Furtado Corrêa</td>
-                        <td>1</td>
-                    </tr>
+                    @foreach (var item in (List<PedidoProduto.Entities.Produto>)ViewBag.produtos)
+                    {
+                        <tr>
+                            <th scope="row">@item.ID</th>
+                            <td>@item.nome</td>
+                            <td>1</td>
+                        </tr>
+                    }
                 </tbody>
             </table>
         </div>

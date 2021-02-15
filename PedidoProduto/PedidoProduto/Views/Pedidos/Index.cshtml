@@ -29,27 +29,17 @@
                         <th>Produto</th>
                         <th>Quantidade</th>
                     </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Izabely Almeida Furtado Corrêa</td>
-                        <td>12/12/2020</td>
-                        <td>Produto teste</td>
-                        <td>4</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Izabely Almeida Furtado Corrêa</td>
-                        <td>12/12/2020</td>
-                        <td>Produto teste</td>
-                        <td>4</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Izabely Almeida Furtado Corrêa</td>
-                        <td>12/12/2020</td>
-                        <td>Produto teste</td>
-                        <td>4</td>
-                    </tr>
+                    @foreach (var item in (List<PedidoProduto.Entities.Pedido>)ViewBag.pedidos)
+                    {
+                        <tr>
+                            <th scope="row">@item.ID</th>
+                            <td>@item.total</td>
+                            <td>@item.dataPedido</td>
+                            <td>@item.total</td>
+                            <td>@item.total</td>
+                        </tr>
+                    }
+                    
                 </tbody>
             </table>
         </div>

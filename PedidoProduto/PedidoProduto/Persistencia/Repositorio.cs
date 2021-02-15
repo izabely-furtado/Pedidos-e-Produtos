@@ -28,16 +28,11 @@ namespace PedidoProduto.Persistencia
         {
             modelBuilder.Entity<Cliente>().ToTable("CLIENTE");
             modelBuilder.Entity<Produto>().ToTable("PRODUTO");
-            modelBuilder.Entity<Pedido>().ToTable("PEDIDOS");
+            modelBuilder.Entity<Pedido>().ToTable("PEDIDO");
 
             modelBuilder.Entity<ClientePedido>().ToTable("CLIENTEPEDIDO");
             modelBuilder.Entity<PedidoProdutoE>().ToTable("PEDIDOPRODUTO");
          
-        }
-
-        private string ToSnakeCase(string str)
-        {
-            return string.Concat(str.Select((x, i) => i > 0 && char.IsUpper(x) ? "_" + x.ToString() : x.ToString())).ToLower();
         }
     }
 }
