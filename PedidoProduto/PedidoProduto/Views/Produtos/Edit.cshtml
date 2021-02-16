@@ -1,0 +1,37 @@
+﻿<div class="row">
+    @if (ViewBag.produto != null && ViewBag.produto.ID != 0)
+    {
+        <div class="col-md-1">
+            <div class="form-group">
+                <input type="number" class="form-control" id="produtoID" name="produtoID" placeholder="Digite o nome" value="@ViewBag.produto.ID" />
+                <small>Mensagem de erro.</small>
+            </div>
+        </div>
+
+        <div class="col-md-7">
+            <div class="form-group">
+                <input type="text" class="form-control" id="produtoNome" name="produtoNome" placeholder="Digite o nome" value="@ViewBag.produto.nome" />
+                <small>Mensagem de erro.</small>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="col-md-8">
+
+            <div class="form-group">
+                <input type="text" class="form-control" id="produtoNome" name="produtoNome" placeholder="Digite o nome" value="@ViewBag.produto.nome" />
+                <small>Mensagem de erro.</small>
+            </div>
+        </div>
+    }
+    <div class="col-md-3">
+        <button type="submit" asp-action="Index"
+                class="btn btn-default btn-theme-orange btn-block btn-outline">
+            Salvar
+        </button>
+    </div>
+    <div class="col-md-1">
+        <button class="material-icons btn btn-default btn-block btn-theme-orange" style="text-transform: none;" asp-action="Index">replay</button>
+    </div>
+</div>

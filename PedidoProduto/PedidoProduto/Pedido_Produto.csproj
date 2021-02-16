@@ -109,4 +109,11 @@
     <Folder Include="wwwroot\assets\guia-estilo\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="Views\Produtos\Index.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>

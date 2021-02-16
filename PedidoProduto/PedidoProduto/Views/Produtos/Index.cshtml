@@ -1,22 +1,43 @@
 ﻿<div class="row">
     <div class="col-md-8">
         <div class="form-group">
-            <input type="text" class="form-control" id="" placeholder="Digite o nome" />
+            <input type="text" class="form-control" id="pesquisar" name="pesquisar" placeholder="Digite o nome" />
             <small>Mensagem de erro.</small>
         </div>
     </div>
-    <div class="col-md-4">
-        <button type="submit"
+    <div class="col-md-3">
+        <button type="submit" value="Index"
                 class="btn btn-default btn-theme-orange btn-block btn-outline">
             Pesquisar
         </button>
     </div>
+    <div class="col-md-1">
+        <button class="material-icons btn btn-default btn-block btn-theme-orange" style="text-transform: none;" asp-action="Edit">add</button>
+    </div>
+
+
 </div>
 
 <div class="row">
     <div class="col-md-12">
 
+        <!-- Alerta Sucesso -->
+        @if ((bool)ViewBag.existSucess)
+        {
+            <div class="alert alert-success alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <strong>Sucesso!</strong> Usar para mensagens de sucesso.
+            </div>
+        }
 
+        <!-- Alerta Error -->
+        @if ((bool)ViewBag.existError)
+        {
+            <div class="alert alert-danger alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <strong>Erro!</strong> @ViewBag.msgError
+            </div>
+        }
         <!-- Tabelas -->
 
         <div class="tabelas table-responsive">
@@ -25,28 +46,74 @@
                     <tr>
                         <th>#</th>
                         <th>Nome</th>
-                        <th>Ações</th>
+                        <th width="10%">Ações</th>
                     </tr>
-                    @foreach (var item in (List<PedidoProduto.Entities.Produto>)ViewBag.produtos)
+                    @foreach (PedidoProduto.Entities.Produto item in (List<PedidoProduto.Entities.Produto>)ViewBag.produtos)
                     {
                         <tr>
                             <th scope="row">@item.ID</th>
-                            <td>@item.nome</td>
-                            <td>1</td>
+
+                            <td>
+                                @item.nome
+                            </td>
+                            <td>
+                                <button class="material-icons" style="border: 0px; background-color: transparent;" asp-action="Edit" asp-route-id="@item.ID">edit</button>
+                                <button class="material-icons" style="border: 0px; background-color: transparent;" asp-action="Index" asp-route-id="@item.ID">delete_forever</button>
+                            </td>
                         </tr>
                     }
+
                 </tbody>
             </table>
         </div>
 
 
-       
+        <!-- Paginação -->
+        <!--
+                    <div class="paginacao centered">
+                        <nav>
+                            <ul class="pagination">
+                                <li class="nav-icon">
+                                    <a href="#" aria-label="Anterior">
+                                        <i class="material-icons md-18">first_page</i>
+                                    </a>
+                                </li>
+                                <li class="nav-icon">
+                                    <a href="#" aria-label="Anterior">
+                                        <i class="material-icons md-18">chevron_left</i>
+                                    </a>
+                                </li>
+                                <li><a href="#">48</a></li>
+                                <li><a href="#">49</a></li>
+                                <li class="active"><a href="#">50</a></li>
+                                <li><a href="#">51</a></li>
+                                <li><a href="#">52</a></li>
+                                <li class="nav-icon">
+                                    <a href="#" aria-label="Próximo">
+                                        <i class="material-icons md-18">chevron_right</i>
+                                    </a>
+                                </li>
+                                <li class="nav-icon">
+                                    <a href="#" aria-label="Próximo">
+                                        <i class="material-icons md-18">last_page</i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+        !-->
     </div>
 </div>
 
 
-<div class="row">
-    <div class="col-md-12">
-        <button type="submit" class="btn btn-default btn-theme-orange">Enviar</button>
-    </div>
-</div>
+
+<script type="text/javascript">
+          function Edit(item)
+          {
+              item.inEdition = true;
+          //window.location.href = @Url.Action("Edit", "Produtos", new { @id = 1 });
+        }
+
+
+</script>
+

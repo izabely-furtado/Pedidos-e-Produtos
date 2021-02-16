@@ -30,16 +30,43 @@ namespace PedidoProduto.Services
             }
         }
 
-        public static Produto salvar(Produto produto_)
+        public static List<Produto> ListarByNome(string filtro)
+        {
+            using (Repositorio ctx = new Repositorio())
+            {
+                return ctx.Produtos.Where(a => a.nome.IndexOf(filtro) >= 0)
+                    .ToList();
+            }
+        }
+
+        public static Produto Salvar(Produto produto_)
         {
             using (Repositorio ctx = new Repositorio())
             {
                 produto_.Validar();
-                Produto _pessoa = ctx.Produtos.Where(x => x.ID.Equals(produto_.ID)).FirstOrDefault();
+                if (produto_.ID != 0)
+                {
+                    Produto _produto = ctx.Produtos.Where(x => x.ID.Equals(produto_.ID)).FirstOrDefault();
 
-                ctx.Produtos.Add(produto_);
-                ctx.SaveChanges();
-                return produto_;
+                    if (_produto != null && _produto.ID != 0)
+                    {
+                        return ProdutoService.Editar(_produto.ID, produto_);
+                    }
+                    //se possuir id !=0 e nao existente no banco.. nao seria novo nem editável
+                    else
+                    {
+                        throw new ApplicationBadRequestException(ApplicationBadRequestException.ERRO_AO_CADASTRAR_CLIENTE);
+                    }
+                }
+                else
+                {
+                    Produto produto = new Produto();
+                    //produto.pedidos = produto_.pedidos;
+                    produto.nome = produto_.nome;
+                    ctx.Produtos.Add(produto);
+                    ctx.SaveChanges();
+                    return produto;
+                }
             }
         }
 
@@ -69,6 +96,13 @@ namespace PedidoProduto.Services
 
                 if (_produto == null)
                     return true;
+
+                //deletar produtos vinculados  a pedidos
+                List<PedidoProdutoE> pedidosProd = PedidoService.ListarForProduct(uuid);
+                foreach (PedidoProdutoE pedProd in pedidosProd)
+                {
+                    ctx.Remove(pedProd);
+                }
 
                 ctx.Remove(_produto);
                 ctx.SaveChanges();

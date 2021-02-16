@@ -41,6 +41,14 @@ namespace PedidoProduto.Services
             }
         }
 
+        public static List<PedidoProdutoE> ListarForProduct(int product_id)
+        {
+            using (Repositorio ctx = new Repositorio())
+            {
+                return ctx.PedidoProdutos.Include(a => a.Produto).Where(a => a.Produto.ID == product_id).ToList();
+            }
+        }
+
         public static Pedido Salvar(Pedido pedido_)
         {
             using (Repositorio ctx = new Repositorio())
