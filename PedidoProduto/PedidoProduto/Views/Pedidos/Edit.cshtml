@@ -1,0 +1,56 @@
+﻿<div class="row">
+    @if (ViewBag.pedido != null && ViewBag.pedido.ID != 0)
+    {
+        <div class="col-md-1">
+            <div class="form-group">
+                <label>#</label>
+                <input type="number" class="form-control" id="pedidoID" name="pedidoID" placeholder="Digite o nome" value="@ViewBag.pedido.ID" />
+                <small>Mensagem de erro.</small>
+            </div>
+        </div>
+
+        <div class="col-md-7">
+            <div class="form-group">
+                <div class="col-md-5">
+                    <div class="form-group">
+                        <label>Cliente</label>
+                        <select class="form-control" id="clientID" name="clientID" value="clientID">
+                            @foreach (PedidoProduto.Entities.Cliente item in (List<PedidoProduto.Entities.Cliente>)ViewBag.clientes)
+                            {
+                                <option value="@item.ID">@item.nome</option>
+                            }
+                        </select>
+                    </div>
+                </div>
+                <small>Mensagem de erro.</small>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="col-md-8">
+
+            <div class="form-group">
+                <label>Cliente</label>
+                <select class="form-control" id="clientID" name="clientID" value="clientID">
+                    @foreach (PedidoProduto.Entities.Cliente item in (List<PedidoProduto.Entities.Cliente>)ViewBag.clientes)
+                    {
+                        <option value="@item.ID">@item.nome</option>
+                    }
+                </select>
+                <small>Mensagem de erro.</small>
+            </div>
+        </div>
+    }
+    <div class="col-md-3">
+        <label></label>
+        <button type="submit" asp-action="Index"
+                class="btn btn-default btn-theme-orange btn-block btn-outline">
+            Salvar
+        </button>
+    </div>
+    <div class="col-md-1">
+        <label></label>
+        <button class="material-icons btn btn-default btn-block btn-theme-orange" style="text-transform: none;" asp-action="Index">replay</button>
+    </div>
+</div>

@@ -97,13 +97,6 @@ namespace PedidoProduto.Services
                 if (_produto == null)
                     return true;
 
-                //deletar produtos vinculados  a pedidos
-                List<PedidoProdutoE> pedidosProd = PedidoService.ListarForProduct(uuid);
-                foreach (PedidoProdutoE pedProd in pedidosProd)
-                {
-                    ctx.Remove(pedProd);
-                }
-
                 ctx.Remove(_produto);
                 ctx.SaveChanges();
 

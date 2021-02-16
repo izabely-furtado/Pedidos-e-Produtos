@@ -8500,6 +8500,7 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "Microsoft.EntityFrameworkCore >= 5.0.3",
+      "Microsoft.EntityFrameworkCore.Relational >= 5.0.3",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 3.1.5",
       "microsoft.entityframeworkcore.sqlserver >= 5.0.3"
     ]
@@ -8544,6 +8545,10 @@
       "netcoreapp3.1": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": {
+            "target": "Package",
+            "version": "[5.0.3, )"
+          },
+          "Microsoft.EntityFrameworkCore.Relational": {
             "target": "Package",
             "version": "[5.0.3, )"
           },

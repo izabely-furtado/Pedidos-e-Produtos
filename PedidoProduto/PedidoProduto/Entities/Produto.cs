@@ -8,7 +8,7 @@ namespace PedidoProduto.Entities
     public class Produto : Entity
     {
         public string nome { get; set; }
-
+        public virtual List<Pedido> pedidos { get; set; }
         public void Validar()
         {
             if (String.IsNullOrEmpty(this.nome))

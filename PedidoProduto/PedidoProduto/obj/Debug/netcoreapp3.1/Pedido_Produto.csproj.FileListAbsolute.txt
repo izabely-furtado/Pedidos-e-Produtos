@@ -281,8 +281,6 @@ C:\Users\Izabely\source\repos\Pedidos-e-Produtos\PedidoProduto\PedidoProduto\bin
 C:\Users\Izabely\source\repos\Pedidos-e-Produtos\PedidoProduto\PedidoProduto\obj\Debug\netcoreapp3.1\Pedido_Produto.csprojAssemblyReference.cache
 C:\Users\Izabely\source\repos\Pedidos-e-Produtos\PedidoProduto\PedidoProduto\obj\Debug\netcoreapp3.1\Pedido_Produto.AssemblyInfoInputs.cache
 C:\Users\Izabely\source\repos\Pedidos-e-Produtos\PedidoProduto\PedidoProduto\obj\Debug\netcoreapp3.1\Pedido_Produto.AssemblyInfo.cs
-C:\Users\Izabely\source\repos\Pedidos-e-Produtos\PedidoProduto\PedidoProduto\obj\Debug\netcoreapp3.1\Pedido_Produto.csproj.CoreCompileInputs.cache
-C:\Users\Izabely\source\repos\Pedidos-e-Produtos\PedidoProduto\PedidoProduto\obj\Debug\netcoreapp3.1\Pedido_Produto.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Izabely\source\repos\Pedidos-e-Produtos\PedidoProduto\PedidoProduto\obj\Debug\netcoreapp3.1\Pedido_Produto.RazorAssemblyInfo.cache
 C:\Users\Izabely\source\repos\Pedidos-e-Produtos\PedidoProduto\PedidoProduto\obj\Debug\netcoreapp3.1\Pedido_Produto.RazorAssemblyInfo.cs
 C:\Users\Izabely\source\repos\Pedidos-e-Produtos\PedidoProduto\PedidoProduto\obj\Debug\netcoreapp3.1\Pedido_Produto.TagHelpers.input.cache
@@ -314,3 +312,6 @@ C:\Users\Izabely\source\repos\Pedidos-e-Produtos\PedidoProduto\PedidoProduto\obj
 C:\Users\Izabely\source\repos\Pedidos-e-Produtos\PedidoProduto\PedidoProduto\obj\Debug\netcoreapp3.1\Pedido_Produto.genruntimeconfig.cache
 C:\Users\Izabely\source\repos\Pedidos-e-Produtos\PedidoProduto\PedidoProduto\obj\Debug\netcoreapp3.1\Razor\Views\Clientes\Edit.cshtml.g.cs
 C:\Users\Izabely\source\repos\Pedidos-e-Produtos\PedidoProduto\PedidoProduto\obj\Debug\netcoreapp3.1\Razor\Views\Produtos\Edit.cshtml.g.cs
+C:\Users\Izabely\source\repos\Pedidos-e-Produtos\PedidoProduto\PedidoProduto\obj\Debug\netcoreapp3.1\Razor\Views\Pedidos\Edit.cshtml.g.cs
+C:\Users\Izabely\source\repos\Pedidos-e-Produtos\PedidoProduto\PedidoProduto\obj\Debug\netcoreapp3.1\Pedido_Produto.csproj.CoreCompileInputs.cache
+C:\Users\Izabely\source\repos\Pedidos-e-Produtos\PedidoProduto\PedidoProduto\obj\Debug\netcoreapp3.1\Pedido_Produto.MvcApplicationPartsAssemblyInfo.cache

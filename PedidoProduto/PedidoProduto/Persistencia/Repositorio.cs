@@ -14,23 +14,32 @@ namespace PedidoProduto.Persistencia
             {
                 optionsBuilder.UseSqlServer(@"Data Source=VMI368814;Initial Catalog=PedidoProduto;Integrated Security=True");
             }
-            
+
         }
 
         public DbSet<Cliente> Clientes { get; set; }
         public DbSet<Produto> Produtos { get; set; }
         public DbSet<Pedido> Pedidos { get; set; }
-      
+
         public DbSet<PedidoProdutoE> PedidoProdutos { get; set; }
-       
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Cliente>().ToTable("CLIENTE");
-            modelBuilder.Entity<Produto>().ToTable("PRODUTO");
-            modelBuilder.Entity<Pedido>().ToTable("PEDIDO");
+            //modelBuilder.Entity<Produto>().ToTable("PRODUTO");
+            // modelBuilder.Entity<Pedido>().ToTable("PEDIDO");
 
-            modelBuilder.Entity<PedidoProdutoE>().ToTable("PEDIDOPRODUTO");
-         
+           // modelBuilder.Entity<PedidoProdutoE>().ToTable("PEDIDOPRODUTO");
+            modelBuilder.Entity<Pedido>().ToTable("PEDIDO")
+                .HasMany<Produto>(s => s.produtos)
+                .WithMany(c => c.pedidos)
+                .UsingEntity(j => j.ToTable("PEDIDOPRODUTO"));
+
+            modelBuilder.Entity<Produto>().ToTable("PRODUTO")
+                .HasMany(p => p.pedidos)
+                .WithMany(p => p.produtos)
+                .UsingEntity(j => j.ToTable("PEDIDOPRODUTO"));
+
         }
     }
 }

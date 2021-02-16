@@ -92,13 +92,13 @@ namespace PedidoProduto.Controllers
             return View();
         }
 
-        public void Delete(int client_ID)
+        public void Delete(int produto_ID)
         {
             try
             {
-                if (client_ID != 0)
+                if (produto_ID != 0)
                 {
-                    ProdutoService.Deletar(client_ID);
+                    ProdutoService.Deletar(produto_ID);
                     this.ViewBag.existSucess = true;
                 }
             }

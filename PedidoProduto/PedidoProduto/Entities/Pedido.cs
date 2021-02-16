@@ -14,7 +14,7 @@ namespace PedidoProduto.Entities
         [ForeignKey("CLIENTE")]
         public virtual Cliente Cliente { get; set; }
 
-        //public virtual List<Produto> produtos { get; set; }
+        public virtual List<Produto> produtos { get; set; }
 
         public void Validar()
         {
@@ -23,7 +23,7 @@ namespace PedidoProduto.Entities
 
             if (Single.IsNaN(this.total) || Single.IsNegative(this.total))
                 throw new ApplicationBadRequestException(ApplicationBadRequestException.TOTAL_INVALIDO);
-            /*
+            
             if (this.produtos != null && this.produtos.Count > 0)
             {
                 List<Produto> lista = new List<Produto>();
@@ -37,7 +37,7 @@ namespace PedidoProduto.Entities
                 }
                 this.produtos = lista;
             }
-            */
+            
             
         }
     }
