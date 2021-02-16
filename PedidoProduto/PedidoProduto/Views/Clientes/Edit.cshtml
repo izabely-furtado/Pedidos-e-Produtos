@@ -1,0 +1,34 @@
+﻿<div class="row">
+    @if (ViewBag.cliente != null && ViewBag.cliente.ID != 0)
+    {
+        <div class="col-md-1">
+            <div class="form-group">
+                <input type="number" class="form-control" id="clienteID" name="clienteID" placeholder="Digite o nome" value="@ViewBag.cliente.ID" />
+                <small>Mensagem de erro.</small>
+            </div>
+        </div>
+
+        <div class="col-md-7">
+            <div class="form-group">
+                <input type="text" class="form-control" id="clienteNome" name="clienteNome" placeholder="Digite o nome" value="@ViewBag.cliente.nome" />
+                <small>Mensagem de erro.</small>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="col-md-8">
+
+            <div class="form-group">
+                <input type="text" class="form-control" id="clienteNome" name="clienteNome" placeholder="Digite o nome" value="@ViewBag.cliente.nome" />
+                <small>Mensagem de erro.</small>
+            </div>
+        </div>
+    }
+    <div class="col-md-4">
+        <button type="submit" asp-action="Index"
+                class="btn btn-default btn-theme-orange btn-block btn-outline">
+            Salvar
+        </button>
+    </div>
+</div>

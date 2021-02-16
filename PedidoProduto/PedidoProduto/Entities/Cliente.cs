@@ -10,6 +10,10 @@ namespace PedidoProduto.Entities
     {
         public string nome { get; set; }
 
+        //public virtual List<Pedido> pedidos { get; set; }
+        [NotMapped] 
+        public bool inEdition { get; set; }
+
         public void Validar()
         {
             if (String.IsNullOrEmpty(this.nome))
@@ -30,6 +34,7 @@ namespace PedidoProduto.Entities
             }
             */
         }
+
     
     }
 }

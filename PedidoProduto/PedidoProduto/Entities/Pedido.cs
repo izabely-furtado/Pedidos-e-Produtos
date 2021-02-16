@@ -1,6 +1,7 @@
 ﻿using PedidoProduto.Util;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 
 namespace PedidoProduto.Entities
@@ -10,8 +11,10 @@ namespace PedidoProduto.Entities
         public DateTime dataPedido {get ; set; }
         public Single total { get; set; }
 
+        [ForeignKey("CLIENTE")]
+        public virtual Cliente Cliente { get; set; }
+
         //public virtual List<Produto> produtos { get; set; }
-        //public virtual Cliente cliente { get; set; }
 
         public void Validar()
         {

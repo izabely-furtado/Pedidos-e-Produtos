@@ -312,3 +312,4 @@ C:\Users\Izabely\source\repos\Pedidos-e-Produtos\PedidoProduto\PedidoProduto\obj
 C:\Users\Izabely\source\repos\Pedidos-e-Produtos\PedidoProduto\PedidoProduto\obj\Debug\netcoreapp3.1\Pedido_Produto.dll
 C:\Users\Izabely\source\repos\Pedidos-e-Produtos\PedidoProduto\PedidoProduto\obj\Debug\netcoreapp3.1\Pedido_Produto.pdb
 C:\Users\Izabely\source\repos\Pedidos-e-Produtos\PedidoProduto\PedidoProduto\obj\Debug\netcoreapp3.1\Pedido_Produto.genruntimeconfig.cache
+C:\Users\Izabely\source\repos\Pedidos-e-Produtos\PedidoProduto\PedidoProduto\obj\Debug\netcoreapp3.1\Razor\Views\Clientes\Edit.cshtml.g.cs

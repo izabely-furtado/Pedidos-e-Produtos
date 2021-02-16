@@ -5,11 +5,11 @@ namespace PedidoProduto.Entities
     public class PedidoProdutoE : Entity
     {
         [ForeignKey("PRODUTO")]
-        public int produtoID { get; set; }
+        public int produto { get; set; }
         public virtual Produto Produto { get; set; }
 
         [ForeignKey("PEDIDO")]
-        public int pedidoID { get; set; }
+        public int pedido { get; set; }
         public virtual Pedido Pedido { get; set; }
     }
 }

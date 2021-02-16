@@ -21,7 +21,6 @@ namespace PedidoProduto.Persistencia
         public DbSet<Produto> Produtos { get; set; }
         public DbSet<Pedido> Pedidos { get; set; }
       
-        public DbSet<ClientePedido> ClientePedidos { get; set; }
         public DbSet<PedidoProdutoE> PedidoProdutos { get; set; }
        
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -30,7 +29,6 @@ namespace PedidoProduto.Persistencia
             modelBuilder.Entity<Produto>().ToTable("PRODUTO");
             modelBuilder.Entity<Pedido>().ToTable("PEDIDO");
 
-            modelBuilder.Entity<ClientePedido>().ToTable("CLIENTEPEDIDO");
             modelBuilder.Entity<PedidoProdutoE>().ToTable("PEDIDOPRODUTO");
          
         }

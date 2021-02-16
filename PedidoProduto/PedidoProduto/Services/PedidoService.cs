@@ -17,7 +17,8 @@ namespace PedidoProduto.Services
         {
             using (Repositorio ctx = new Repositorio())
             {
-                return ctx.Pedidos.Where(a => a.ID == uuid)
+                return ctx.Pedidos.Include(a => a.Cliente)
+                                  .Where(a => a.ID == uuid)
                                   .FirstOrDefault();
             }
         }
@@ -28,7 +29,15 @@ namespace PedidoProduto.Services
         {
             using (Repositorio ctx = new Repositorio())
             {
-                return ctx.Pedidos.ToList();
+                return ctx.Pedidos.Include(a => a.Cliente).ToList();
+            }
+        }
+
+        public static List<Pedido> Listar(int client_id)
+        {
+            using (Repositorio ctx = new Repositorio())
+            {
+                return ctx.Pedidos.Include(a => a.Cliente).Where(a => a.Cliente.ID == client_id).ToList();
             }
         }
 

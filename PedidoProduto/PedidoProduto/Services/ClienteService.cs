@@ -17,7 +17,8 @@ namespace PedidoProduto.Services
         {
             using (Repositorio ctx = new Repositorio())
             {
-                return ctx.Clientes.Where(a => a.ID == id).FirstOrDefault();
+                return ctx.Clientes//.Include(a => a.pedidos)
+                    .Where(a => a.ID == id).FirstOrDefault();
             }
         }
 
@@ -35,7 +36,17 @@ namespace PedidoProduto.Services
         {
             using (Repositorio ctx = new Repositorio())
             {
-                return ctx.Clientes.ToList();
+                return ctx.Clientes//.Include(a => a.pedidos)
+                    .ToList();
+            }
+        }
+
+        public static List<Cliente> ListarByNome(string filtro)
+        {
+            using (Repositorio ctx = new Repositorio())
+            {
+                return ctx.Clientes.Where(a => a.nome.IndexOf(filtro) >=0 )
+                    .ToList();
             }
         }
 
@@ -61,7 +72,7 @@ namespace PedidoProduto.Services
                 else
                 {
                     Cliente cliente = new Cliente();
-                   // cliente.pedidos = cliente_.pedidos;
+                    //cliente.pedidos = cliente_.pedidos;
                     cliente.nome = cliente_.nome;
                     ctx.Clientes.Add(cliente);
                     ctx.SaveChanges();
@@ -75,7 +86,7 @@ namespace PedidoProduto.Services
             using (Repositorio ctx = new Repositorio())
             {
                 Cliente _cliente = ctx.Clientes
-                    //.Include(a => a.pedidos)
+                   // .Include(a => a.pedidos)
                     .Where(x => x.ID == uuid).FirstOrDefault();
                 _cliente.Validar();
 
@@ -112,19 +123,27 @@ namespace PedidoProduto.Services
         }
 
 
-        public static bool Deletar(string cliente_uuid)
+        public static bool Deletar(int cliente_uuid)
         {
             List<Cliente> erros = new List<Cliente>();
 
             using (Repositorio ctx = new Repositorio())
             {
                 Cliente _cliente = ctx.Clientes//.Include(a => a.pedidos)
-                    .Where(a => a.ID.Equals(cliente_uuid)).FirstOrDefault();
+                    .Where(a => a.ID == cliente_uuid).FirstOrDefault();
 
                 if (_cliente == null)
                 {
                     return true;
                 }
+                
+                //deletar pedidos vinculados 
+                List<Pedido> pedidos = PedidoService.Listar(_cliente.ID);
+                foreach(Pedido pedido in pedidos)
+                {
+                    PedidoService.Deletar(pedido.ID);
+                }
+
                 ctx.Clientes.Remove(_cliente);
                 ctx.SaveChanges();
                 return true;

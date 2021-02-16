@@ -2301,3 +2301,7 @@ box-shadow:         8px 8px 0px 0px rgba(50, 50, 50, 0.14);
 
 .list-theme li {background-color: transparent;}
 
+.actionButton {
+	border: 0px !important;
+	background-color: transparent !important;
+}
